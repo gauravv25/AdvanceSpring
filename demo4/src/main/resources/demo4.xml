@@ -15,6 +15,7 @@
 	</bean>
 	<bean id="xmlpersist" class="demo.XML_Persist">
 		<property name="marshaller" ref="jaxbImpl"></property>
+		<property name="unmarshaller" ref="jaxbImpl"></property>
 
 	</bean>
 </beans>

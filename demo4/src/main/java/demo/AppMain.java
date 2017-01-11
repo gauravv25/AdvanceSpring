@@ -24,6 +24,7 @@ public class AppMain {
 		
 		
 		persist.write(e, "test");
+		persist.read("test");
 		context.close();
 	}
 

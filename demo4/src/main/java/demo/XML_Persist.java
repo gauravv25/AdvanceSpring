@@ -3,6 +3,7 @@ package demo;
 import java.io.File;
 
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.Unmarshaller;
@@ -19,7 +20,14 @@ public class XML_Persist {
 		}
 	}
 
-	public void read() {
+	public void read(String filePath) {
+		try {
+			Emp e = (Emp) unmarshaller.unmarshal(new StreamSource(new File(filePath)));
+			System.out.println(e);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public Marshaller getMarshaller() {
